@@ -19,7 +19,6 @@ const Home = () => {
           <li>
             <Link href="/jiu-jitsu-de-garagem">Jiu-Jitsu de Garagem</Link>
           </li>
-          {/* Adicione mais seções conforme necessário */}
         </ul>
       </nav>
     </div>
