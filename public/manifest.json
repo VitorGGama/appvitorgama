@@ -1,7 +1,7 @@
 {
-  "short_name": "PetShop Vitor",
+  "short_name": "Sobre esportes",
   "name": "O site de esportes",
-  "description": "Exemplo de uma PWA criada com Next.js",
+  "description": "Exemplo de uma PWA",
   "icons": [
     {
       "src": "images/pistaCorrida.jpg",
