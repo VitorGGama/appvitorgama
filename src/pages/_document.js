@@ -8,7 +8,7 @@ export default function Document() {
         <meta name="application-name" content="site de esportes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="PetShop" />
+        <meta name="apple-mobile-web-app-title" content="site de esportes" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#000000" />
         <link
