@@ -1,4 +1,4 @@
-//jiu-jitsu.jsx
+// Jit-jitsu
 import Head from "next/head";
 import Link from "next/link";
 import styled from "styled-components";
@@ -8,7 +8,33 @@ const JiuJitsuContainer = styled.section`
   margin: 50px;
 `;
 
-const JiuJitsu = () => {
+export async function getStaticProps() {
+  try {
+    const resposta = await fetch(
+      `https://nba-stats-db.herokuapp.com/api/playerdata/season/2023`
+    );
+    const dados = await resposta.json();
+    console.log(dados);
+
+    let dadosAPI = dados.result;
+
+    if (!resposta.ok) {
+      throw new Error(`Error: ${resposta.status} - ${resposta.statusText}`);
+    }
+
+    dadosAPI = dadosAPI || null;
+
+    return {
+      props: { dadosAPI },
+    };
+  } catch (error) {
+    console.error("Deu ruim: " + error.message);
+    return { notFound: true };
+  }
+}
+
+const JiuJitsu = ({ dadosAPI }) => {
+  const teste = dadosAPI;
   return (
     <div>
       <Head>
@@ -25,6 +51,13 @@ const JiuJitsu = () => {
         <Link href="/">
           <p>Página inicial</p>
         </Link>
+        {teste.map((jogador) => {
+          return (
+            <>
+              <p>{jogador.player_name}</p>
+            </>
+          );
+        })}
       </JiuJitsuContainer>
     </div>
   );
