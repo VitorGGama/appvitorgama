@@ -15,7 +15,7 @@ export async function getStaticProps() {
       `https://nba-stats-db.herokuapp.com/api/playerdata/season/2023`
     );
     const dados = await resposta.json();
-    console.log(dados.results);
+
     let dadosAPI = dados.results;
 
     if (!resposta.ok) {
