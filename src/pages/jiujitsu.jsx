@@ -14,15 +14,12 @@ export async function getStaticProps() {
       `https://nba-stats-db.herokuapp.com/api/playerdata/season/2023`
     );
     const dados = await resposta.json();
-    console.log(dados);
 
-    let dadosAPI = dados.result;
+    let dadosAPI = dados.results;
 
     if (!resposta.ok) {
-      throw new Error(`Error: ${resposta.status} - ${resposta.statusText}`);
+      throw new Error(`Erro: ${resposta.status} - ${resposta.statusText}`);
     }
-
-    dadosAPI = dadosAPI || null;
 
     return {
       props: { dadosAPI },
